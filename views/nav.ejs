@@ -1,0 +1,22 @@
+<nav>
+    <a href="/"><img src="/image/logo.svg"></a>
+    <ul>
+        <li><a href="/company">Company</a>
+            <ul>
+                <li><a href="#what">What We Do</a></li>
+                <li><a href="#capabilities">Capabilities</a></li>
+                <li><a href="#who">Who We Work With</a></li>
+                <li><a href="#watch">Trend Watch</a></li>
+                <li><a href="#press">Press</a></li>
+            </ul>
+        </li>
+        <li><a href="/process">Process</a></li>
+        <li><a href="/contact">Contact</a></li>
+    </ul>
+</nav>
+<script>
+    var p = document.location.pathname;
+    if (p == '/') p = '/company';
+    console.log(p);
+    $("nav").find("a[href='"+p+"']").addClass("selected");
+</script>

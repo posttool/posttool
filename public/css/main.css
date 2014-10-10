@@ -1,0 +1,113 @@
+@font-face {
+    font-family: "Helvetica Neue Condensed Bold";
+    font-weight: bold;
+    src: url("HelveticaNeue-CondensedBold.otf") format("opentype");
+}
+
+* {
+    font-family: "Helvetica Neue Light", sans-serif;
+    color: #6B6A6A;
+    font-size: 16px;
+}
+
+body {
+    background-color: #FCF749;
+    margin: 0;
+}
+#root {
+    background-color: #EEEFEA;
+    margin: 80px 20px 20px 0;
+
+}
+@media only screen and (min-width: 900px) {
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 1100px;
+        height: 60px;
+        padding-top: 25px;
+        background-color: #FCF749;
+    }
+
+    nav img {
+        float: left;
+        padding: 0 100px 0 66px;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 25px 0 0 0;
+        padding: 0;
+        float: left;
+    }
+
+    nav li {
+        float: left;
+        width: 200px;
+    }
+
+    nav li a {
+        font-family: "Helvetica Neue Condensed Bold", sans-serif;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #111;
+        font-size: 16px;
+        letter-spacing: 2px;
+        padding: 10px 10px 17px;
+    }
+
+    nav li a:hover {
+        color: #777;
+        background-color: #000;
+    }
+
+    nav li a.selected {
+        color: #777;
+    }
+
+    nav ul ul {
+        background-color: #111;
+        margin-top: 15px;
+        display: none;
+    }
+
+    nav ul ul li {
+        float: inherit;
+    }
+
+    nav ul ul li a {
+        color: #fff;
+        text-transform: none;
+    }
+
+    nav ul ul li a:hover {
+        background-color: #000;
+    }
+}
+
+
+h1, .bighead {
+    font-size: 64px;
+    font-family: "Helvetica Neue Condensed Bold", sans-serif;
+    font-weight: 700;
+    color: #111;
+    letter-spacing: 1px;
+}
+
+.bighead-barleft {
+    border-left: 16px solid #111;
+    padding: 64px;
+}
+
+
+
+
+
+
+/**** smaller 8?*/
+
+@media only screen and (min-width: 1100px) {
+    #root {width: 1100px;}
+}
