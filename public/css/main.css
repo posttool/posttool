@@ -19,6 +19,7 @@ body {
 #root {
     background-color: #EEEFEA;
     margin: 80px 20px 0 0;
+    z-index:2;
 
 }
 
@@ -67,11 +68,33 @@ h3, .head {
     color: #333;
 }
 
+.capabilities h3 {
+    height: 60px;
+    border-bottom: 3px solid #eee;
+}
+.capabilities h3:hover {
+    border-bottom: 3px solid #111;
+}
+
 .medium {
     font-size: 24px;
     color: #333;
     padding-top: 15px;
 }
+
+.prompt {
+    padding: 10px 20px 0 40%;
+}
+.prompt a {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #333;
+    font-size:12px;
+}
+
+
+
+
 /* overlay */
 @media only screen and (min-width: 900px) {
     #overlay {
