@@ -1,5 +1,6 @@
+<div id="bz"></div>
+<div id="logo"><a href="/"><img src="/image/logo.svg" id="logo-img"></a></div>
 <nav>
-    <a href="/"><img src="/image/logo.svg"></a>
     <ul>
         <li><a href="/company">Company</a>
             <ul>
@@ -17,6 +18,5 @@
 <script>
     var p = document.location.pathname;
     if (p == '/') p = '/company';
-    console.log(p);
     $("nav").find("a[href='"+p+"']").addClass("selected");
 </script>
