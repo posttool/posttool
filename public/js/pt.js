@@ -50,14 +50,8 @@ function update() {
     $g.css({position:'inherit', top: 'inherit'})
   }
 }
-var oto = -1;
 function update_delay() {
-  if (oto == -1) {
-    oto = setTimeout(function () {
-      update();
-      oto = -1;
-    }, 100);
-  }
+  window.requestAnimationFrame(update);
 }
 $(window).scroll(update);
 $(window).resize(update_delay);
