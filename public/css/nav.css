@@ -3,7 +3,10 @@ nav ul {
     margin: 0;
     padding: 0;
 }
-
+nav li {
+  margin: 6px;
+  /*just added a bit of space for fat-fingers on small screens. think it helps readability, too*/
+}
 nav li a {
     font-family: "Helvetica Neue Condensed Bold", sans-serif;
     text-decoration: none;
