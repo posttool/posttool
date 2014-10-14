@@ -145,11 +145,35 @@ h3, .head {
     }
 }
 
-
-
-
 /**** smaller 8?*/
 
-@media only screen and (min-width: 1150px) {
-    #root {width: 1150px;}
+@media only screen and (min-width: 1050px) {
+    #root {
+        width: 1150px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+
+
+    #root {
+        margin-top: 0;
+    }
+    #root div:empty {
+        display: none;
+    }
+
+    h1, .bighead {
+        font-size: 36px;
+    }
+
+    .bigpadright {
+        padding-right: 35px;
+    }
+
+    .bighead-barleft {
+    padding: 32px 32px 24px 32px;
+}
+
+
 }
