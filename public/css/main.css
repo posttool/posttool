@@ -18,8 +18,8 @@ body {
 #root {
     background-color: #EEEFEA;
     margin: 80px 20px 0 0;
-    z-index:2;
-    display:none;
+    z-index: 2;
+    display: none;
 }
 
 #root ul {
@@ -31,7 +31,7 @@ body {
 #root li {
     font-size: 13px;
     color: #333;
-    padding-bottom:10px;
+    padding-bottom: 10px;
     letter-spacing: .01em;
 }
 
@@ -49,14 +49,14 @@ h1, .bighead {
 }
 
 .bigbody {
-     font-family: "Helvetica Neue", sans-serif;
-   font-size: 23px;
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 23px;
     line-height: 38px;
-    color:#444;
+    color: #444;
 }
 
 .bigpadright {
-    padding-right:215px;
+    padding-right: 215px;
 }
 
 .padboth {
@@ -69,9 +69,10 @@ h3, .head {
 }
 
 .capabilities h3 {
-    height:30px;
+    height: 30px;
     border-bottom: 3px solid #eee;
 }
+
 .capabilities h3:hover {
     border-bottom: 3px solid #111;
 }
@@ -86,13 +87,15 @@ h3, .head {
     padding: 10px 20px 0 0;
     letter-spacing: .02em;
 }
+
 #root a {
     text-transform: uppercase;
     text-decoration: none;
     color: #666;
-    font-size:12px;
+    font-size: 12px;
     font-weight: bold;
 }
+
 #root a:hover {
     background-color: #111;
     color: #fff;
@@ -101,11 +104,13 @@ h3, .head {
 #root form {
     line-height: 20px;
 }
+
 #root form label {
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+
 #root form input, form textarea {
     font-family: "Helvetica Neue";
     font-size: 17px;
@@ -114,23 +119,10 @@ h3, .head {
     border: 1px solid #eee;
     width: 100%;
 }
+
 .case-info {
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* overlay */
 @media only screen and (min-width: 900px) {
@@ -155,10 +147,10 @@ h3, .head {
 
 @media only screen and (max-width: 850px) {
 
-
     #root {
         margin-top: 0;
     }
+
     #root div:empty {
         display: none;
     }
@@ -172,8 +164,7 @@ h3, .head {
     }
 
     .bighead-barleft {
-    padding: 32px 32px 24px 32px;
-}
-
+        padding: 32px 32px 24px 32px;
+    }
 
 }

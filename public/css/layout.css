@@ -53,10 +53,8 @@
 
 .hspan_2 {
     height: 400px;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    overflow: hidden;
 }
-
 
 @media only screen and (max-width: 800px) {
     .col {
