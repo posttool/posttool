@@ -1,8 +1,7 @@
 var y0 = -150;
 var y1 = 60;
 function update() {
-  if ( $(window).width()<1000)
-  {
+  if ($(window).width() < 1000) {
     $('.col').each(function (index, element) {
       var $el = $(element);
       $el.css({opacity: 1});
@@ -33,21 +32,22 @@ function update() {
     $el.css({opacity: Math.max(.2, o)});
   });
   // logo
-  var logod = (st < 40 ? 0 : (st-40) *.3);
+  var logod = (st < 40 ? 0 : (st - 40) * .3);
   var logol = 60 - logod;
-  $("#logo-img").css({'padding': '0 0 0 '+Math.max(0,logol)+'px'});
+  $("#logo-img").css({'padding': '0 0 0 ' + Math.max(0, logol) + 'px'});
   //puff
-  var bza = (st < 100 ? 0 : (st-100) *.1);
+  var bza = (st < 100 ? 0 : (st - 100) * .1);
   $("#bz").css({opacity: Math.min(1, bza)});
   //gantt
   var $g = $("#gantt");
-  if (st > 550) {
-    var t = 180;
+  if (st > 580) {
+    var t = 250;
     //t += (st - 550) * .4;
-    $g.css({position:'fixed', top: t+'px'});
+    var w = $g.width();
+    $g.css({position: 'fixed', top: t + 'px', width: w + 'px'});
     $g.parent().css({opacity: 1});
   } else {
-    $g.css({position:'inherit', top: 'inherit'})
+    $g.css({position: 'inherit', top: 'inherit', width: '100%'})
   }
 }
 function update_delay() {
@@ -73,7 +73,7 @@ function init_mobile_nav() {
   $n.find("a[href='" + p + "']").addClass("selected");
 }
 function toggle_mobile_nav() {
-  if ($(window).width()>900)//or should it be if $("nav").css('position')=='fixed'?
+  if ($(window).width() > 900)//or should it be if $("nav").css('position')=='fixed'?
     return;
 
   move('nav')
