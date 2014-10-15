@@ -30,7 +30,7 @@ function update() {
       else
         o = 1 - (y - y2) / (y3 - y2);
     }
-    $el.css({opacity: Math.max(.2, o)});
+    $el.css({opacity: Math.max(.1, o)});
   });
   // logo
   var logod = (st < 40 ? 0 : (st - 40) * .3);
@@ -60,7 +60,7 @@ $(window).scroll(update);
 $(window).resize(update_delay);
 $(document).ready(function () {
   $("#root").show();
-  update();
+  window.requestAnimationFrame(update);
   init_mobile_nav();
 });
 

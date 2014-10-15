@@ -26,7 +26,6 @@ p {
     background-color: #EEEFEA;
     margin: 80px 20px 0 0;
     z-index: 2;
-    display: none;
     max-width: 1150px;
 }
 
@@ -134,7 +133,7 @@ h3, .head {
 }
 
 /* overlay */
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 850px) {
     #overlay {
         position: absolute;
         top: 120px;
