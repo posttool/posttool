@@ -128,8 +128,9 @@ h3, .head {
     width: 100%;
 }
 
-.case-info {
-
+.topline {
+    margin-top: 80px;
+    border-top: 1px solid #111;
 }
 
 /* overlay */
@@ -145,16 +146,42 @@ h3, .head {
     }
 }
 
-/**** smaller 8?*/
-
+/**** smaller */
 
 @media only screen and (max-width: 1150px) {
+    * {
+        font-size: 14px;
+    }
+
+    h1, .bighead {
+        font-size: 50px;
+    }
+
     #root {
     }
 
     .bigpadright {
         padding-right: 10%;
     }
+
+    .topline {
+        margin-top: 65px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    * {
+        font-size: 13px;
+    }
+
+    h1, .bighead {
+        font-size: 45px;
+    }
+
+    .topline {
+        margin-top: 54px;
+    }
+
 }
 @media only screen and (max-width: 850px) {
 

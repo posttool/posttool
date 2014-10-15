@@ -2,6 +2,18 @@ var MW = 850;
 var y0 = -150;
 var y1 = 60;
 function update() {
+   // hspan
+  var h =110;
+  $('.hspan_2').each(function (index, element) {
+    $(element).css({height:'auto'});
+  });
+  $('.hspan_2').each(function (index, element) {
+    h = Math.max(h, $(element).height())
+  });
+  $('.hspan_2').each(function (index, el) {
+    $(el).css({height: (h+28)+'px'});
+  });
+
   if ($(window).width() < MW) {
     $('.col').each(function (index, element) {
       var $el = $(element);
@@ -59,9 +71,9 @@ function update_delay() {
 $(window).scroll(update);
 $(window).resize(update_delay);
 $(document).ready(function () {
-  $("#root").show();
   window.requestAnimationFrame(update);
   init_mobile_nav();
+
 });
 
 var mobile_nav_open = false;
