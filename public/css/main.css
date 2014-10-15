@@ -27,6 +27,7 @@ p {
     margin: 80px 20px 0 0;
     z-index: 2;
     display: none;
+    max-width: 1150px;
 }
 
 #root ul {
@@ -63,7 +64,7 @@ h1, .bighead {
 }
 
 .bigpadright {
-    padding-right: 215px;
+    padding-right: 20%;
 }
 
 .padboth {
@@ -147,12 +148,15 @@ h3, .head {
 
 /**** smaller 8?*/
 
-@media only screen and (min-width: 1050px) {
+
+@media only screen and (max-width: 1150px) {
     #root {
-        width: 1150px;
+    }
+
+    .bigpadright {
+        padding-right: 10%;
     }
 }
-
 @media only screen and (max-width: 850px) {
 
     #root {

@@ -1,7 +1,8 @@
+var MW = 850;
 var y0 = -150;
 var y1 = 60;
 function update() {
-  if ($(window).width() < 1000) {
+  if ($(window).width() < MW) {
     $('.col').each(function (index, element) {
       var $el = $(element);
       $el.css({opacity: 1});
@@ -75,7 +76,7 @@ function init_mobile_nav() {
   $n.find("a[href='" + p + "']").addClass("selected");
 }
 function toggle_mobile_nav() {
-  if ($(window).width() > 900)//or should it be if $("nav").css('position')=='fixed'?
+  if ($(window).width() > MW)//or should it be if $("nav").css('position')=='fixed'?
     return;
 
   move('nav')
@@ -91,21 +92,21 @@ function toggle_mobile_nav() {
  * Replace all SVG images with inline SVG
  * http://stackoverflow.com/questions/11978995/how-to-change-color-of-svg-image-using-css-jquery-svg-image-replacement
  */
-$('img.svg').each(function () {
-  var $img = $(this);
-  var imgID = $img.attr('id');
-  var imgClass = $img.attr('class');
-  var imgWidth = $img.attr('width');
-
-  $.get($img.attr('src'), function (data) {
-    var $svg = $(data).find('svg');
-    if (typeof imgID !== 'undefined')
-      $svg = $svg.attr('id', imgID);
-    if (typeof imgClass !== 'undefined')
-      $svg = $svg.attr('width', imgClass);
-    if (typeof imgWidth !== 'undefined')
-      $svg = $svg.attr('width', imgWidth);
-    $svg = $svg.removeAttr('xmlns:a');
-    $img.replaceWith($svg);
-  }, 'xml');
-});
+//$('img.svg').each(function () {
+//  var $img = $(this);
+//  var imgID = $img.attr('id');
+//  var imgClass = $img.attr('class');
+//  var imgWidth = $img.attr('width');
+//
+//  $.get($img.attr('src'), function (data) {
+//    var $svg = $(data).find('svg');
+//    if (typeof imgID !== 'undefined')
+//      $svg = $svg.attr('id', imgID);
+//    if (typeof imgClass !== 'undefined')
+//      $svg = $svg.attr('width', imgClass);
+//    if (typeof imgWidth !== 'undefined')
+//      $svg = $svg.attr('width', imgWidth);
+//    $svg = $svg.removeAttr('xmlns:a');
+//    $img.replaceWith($svg);
+//  }, 'xml');
+//});

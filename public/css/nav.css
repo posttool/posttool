@@ -66,19 +66,22 @@ nav li a.selected:hover {
         position: fixed;
         z-index: 10;
         top: 0;
-        left: 236px;
+        left: 245px;
         height: 60px;
         padding-top: 25px;
+        width: 70%;
+        max-width: 880px;
     }
 
     nav ul {
         list-style-type: none;
         margin: 25px 0 0 0;
         padding: 0;
+        width: 80%;
     }
 
     nav li {
-        width: 225px;
+        width: 30%;
         height: 20px;
         float: left;
         text-align: right;
