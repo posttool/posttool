@@ -1,10 +1,6 @@
 var fs = require('fs');
 var cluster = require('cluster');
-//var express = require('express');
 var useCluster = false;
-//var MongoClient = require('mongodb').MongoClient,
-//   ObjectID = require('mongodb').ObjectID;
-//var config = require('./config');
 
 if (useCluster && cluster.isMaster) {
   var cpuCount = require('os').cpus().length;
@@ -18,8 +14,9 @@ if (useCluster && cluster.isMaster) {
 
 } else {
   var express = require('express');
+  var bodyParser = require('body-parser')
   var app = express();
-
+  app.use(bodyParser.urlencoded({ extended: false }))
   app.set('views', __dirname + '/views');
   app.use(express.static(__dirname + '/public'));
 
@@ -30,26 +27,39 @@ if (useCluster && cluster.isMaster) {
 //    var mails = db.collection('mail');
 //    var relationships = db.collection('relationship');
 
-    app.get('/', function (req, res, next) {
-      res.render('index.ejs');
-    });
+  app.get('/', function (req, res, next) {
+    res.render('index.ejs');
+  });
 
   app.get('/company', function (req, res, next) {
-      res.render('index.ejs');
-    });
+    res.render('index.ejs');
+  });
 
   app.get('/process', function (req, res, next) {
-      res.render('process.ejs');
-    });
+    res.render('process.ejs');
+  });
 
   app.get('/contact', function (req, res, next) {
-      res.render('contact.ejs');
+    res.render('contact.ejs');
+  });
+
+  var nodemailer = require('nodemailer');
+  app.post('/message', function (req, res, next) {
+    var transporter = nodemailer.createTransport();
+    transporter.sendMail({
+      from: req.body.name + '<' + req.body.email+ '>',
+      to: 'david@posttool.com',
+      subject: "[posttool] "+req.body.company,
+      text: req.body.message
+    }, function(err, r){
+      if (err) return next(err);
+      res.json({msg:'ok', data: req.body});
     });
+  });
 
 
-
-    app.listen(3001);
-    console.log("ready")
+  app.listen(3001);
+  console.log("ready")
 //  });
 }
 

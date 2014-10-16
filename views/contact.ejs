@@ -8,7 +8,6 @@
 
     </div>
     <div class="section group">
-
         <div class="case-info col span_5_of_5 padboth">
             <form>
                 <label>Your Name</label><br>
@@ -19,18 +18,33 @@
                 <input type="text" name="company"><br>
                 <label>Message</label><br>
                 <textarea name="message" rows="4"></textarea><br>
-                <a href="#">SEND MESSAGE.</a>
+                <a href="#" id="send-message">SEND MESSAGE.</a>
             </form>
         </div>
-
     </div>
-
-
-
     <% include footer %>
 </div>
 <% include foot %>
- <img src="/image/se.svg" style="float: left">
+<!-- * -->
+<script>
+$("#send-message").click(function(e){
+    e.preventDefault();
+    var d = $("form").serialize();
+    $("form input").attr('disabled', 'disabled');
+    $("form textarea").attr('disabled', 'disabled');
+    $.ajax({url: '/message', type:'POST', data: d}).done(function(e){
+        var $p = $("form").parent();
+        $("form").remove();
+        var $d = $("<div></div>");
+        $d.append("Thank you. ")
+        if (e.data.message)
+            $d.append("Your message &quot;"+e.data.message+"&quot; was delivered. ");
+        $d.append("Someone will be in touch shortly.")
+        $p.append($d);
+    })
+})
+</script>
+<img src="/image/se.svg" style="float: left">
 <div style="float: left; margin: 42px 0px 20px 2px; padding: 0px 18px;">
   <h3>There is much more.</h3>
 
