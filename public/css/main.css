@@ -169,20 +169,7 @@ h3, .head {
     }
 }
 
-@media only screen and (max-width: 950px) {
-    * {
-        font-size: 13px;
-    }
 
-    h1, .bighead {
-        font-size: 45px;
-    }
-
-    .topline {
-        margin-top: 54px;
-    }
-
-}
 @media only screen and (max-width: 850px) {
 
     #root {
