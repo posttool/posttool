@@ -12,11 +12,11 @@
 
     <div class="section group padboth">
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 0.5, "vis": 0.5, "ux": 0.5, "sys": 0.5, "pm": 0.5 }'>
             <h3 style="border-bottom: 1px solid #333;">Working With Us</h3>
 
             <div class="medium">
-                Post Tool believes that research, documentation, design and development are a unified process in which all
+                Research, documentation, design and development are a unified process in which all
                 team members participate.
               Our goal is to keep the software usable and logically consistent as it
                 adapts to use and matures.
@@ -39,8 +39,19 @@
 
     <div class="section group padboth">
 
-        <div class="col span_2_of_5" style="height: 0;">
+        <div class="span_2_of_5" style="height: 0; display: block;
+    float: left;
+    padding: 18px 36px 0 0;
+    box-sizing: border-box;">
+        <!--<div class="col span_2_of_5" style="height: 0;">-->
             <!--<img id="gantt" src="image/gantt.svg" class="svg" width="100%">-->
+          <div id="roles">
+            <div class="role" id="you">You</div>
+            <div class="role" id="vis">Vis</div>
+            <div class="role" id="ux">UX</div>
+            <div class="role" id="sys">Sys</div>
+            <div class="role" id="pm">PM</div>
+          </div>
         </div>
         <div class="col span_3_of_5"></div>
 
@@ -56,7 +67,7 @@
 
 
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 1, "vis": 1, "ux": 0.3, "sys": 0.3, "pm": 1 }'>
             <div class="col span_1_of_3"><h3>Discovery </h3></div>
           <div class="col span_2_of_3"><p>
               We begin by understanding your desires thoroughly.
@@ -83,7 +94,7 @@
         </div>
 
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 0.5, "vis": 0.8, "ux": 1, "sys": 1, "pm": 0.7 }'>
             <div class="col span_1_of_3"><h3>Planning</h3></div>
              <div class="col span_2_of_3">
               <p>We analyze the project into component parts before any coding begins. We quantify and estimate roles and document workflows.
@@ -139,7 +150,7 @@
         </div>-->
 
         <div class="col span_2_of_5"></div>
-      <div class="col span_3_of_5">
+      <div class="col span_3_of_5 phase" data-roles='{ "you": 0.5, "vis": 0.5, "ux": 1, "sys": 1, "pm": 0.5 }'>
             <div class="col span_1_of_3"><h3>Documentation</h3></div>
              <div class="col span_2_of_3">
             <p>We produce a comprehensive overview of the application. This is our roadmap.
@@ -177,7 +188,7 @@
         </div>
 -->
       <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 0.2, "vis": 0.2, "ux": 1, "sys": 1, "pm": 0.2 }'>
             <div class="col span_1_of_3"><h3>Application Development</h3></div>
              <div class="col span_2_of_3">
             <p>We build your dream. Our UX, design and development teams build highly functional and custom applications to fit your needs.
@@ -194,7 +205,7 @@
              </div>
         </div>
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 1, "vis": 0.5, "ux": 0.7, "sys": 0.7, "pm": 1 }'>
             <div class="col span_1_of_3"><h3>Evaluation </h3></div>
              <div class="col span_2_of_3">
             <p>Here we are. The application is in beta. Does it meet our expectations? Where do we go from here? These
@@ -208,7 +219,7 @@
 
         </div>
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 1, "vis": 0.1, "ux": 0.1, "sys": 0.1, "pm": 1 }'>
             <div class="col span_1_of_3"><h3>Maintenance</h3></div>
              <div class="col span_2_of_3">
             <p>Your application is alive and functioning in its ecosystem.
