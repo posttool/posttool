@@ -193,3 +193,20 @@ h3, .head {
     }
 
 }
+
+#roles {
+  position: fixed; top: 320px; left: 80px;
+}
+.role {
+  float: left;
+  background-color: #000;
+  color: #fff;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  font-weight: bold;
+  margin: 0px 4px 0px 0px;
+  padding: 12px;
+  -webkit-border-radius: 100px; -moz-border-radius: 100px; border-radius: 100px;
+  opacity: 0.0;
+}

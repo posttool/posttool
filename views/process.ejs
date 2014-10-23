@@ -12,14 +12,14 @@
 
     <div class="section group padboth">
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 0.5, "vis": 0.5, "ux": 0.5, "sys": 0.5, "pm": 0.5 }'>
             <h3 style="border-bottom: 1px solid #333;">Working With Us</h3>
 
             <div class="medium">
-                Post Tool believes that research, documentation, design and development are a unified process in which all
+                Research, documentation, design and development are a unified process in which all
                 team members participate.
-              Our goal is to keep the software usable and logically consistent as it
-                adapts to use and matures.
+              Our goal is to keep the software usable and logically consistent as it matures and
+                adapts to use.
               Post Tool classifies all software development projects into phases. A typical project progresses through
                 each of the following phases.
               <!--Often we loop through the phases continuously as needs and
@@ -39,8 +39,19 @@
 
     <div class="section group padboth">
 
-        <div class="col span_2_of_5" style="height: 0;">
+        <div class="span_2_of_5" style="height: 0; display: block;
+    float: left;
+    padding: 18px 36px 0 0;
+    box-sizing: border-box;">
+        <!--<div class="col span_2_of_5" style="height: 0;">-->
             <!--<img id="gantt" src="image/gantt.svg" class="svg" width="100%">-->
+          <div id="roles">
+            <div class="role" id="you">You</div>
+            <div class="role" id="vis">Vis</div>
+            <div class="role" id="ux">UX</div>
+            <div class="role" id="sys">Sys</div>
+            <div class="role" id="pm">PM</div>
+          </div>
         </div>
         <div class="col span_3_of_5"></div>
 
@@ -56,7 +67,7 @@
 
 
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 1, "vis": 1, "ux": 0.3, "sys": 0.3, "pm": 1 }'>
             <div class="col span_1_of_3"><h3>Discovery </h3></div>
           <div class="col span_2_of_3"><p>
               We begin by understanding your desires thoroughly.
@@ -69,7 +80,7 @@
               We learn your language, then refine, standardize, and document it. We use this language to establish
               all the requirements and desires of key stakeholders.
             </p>
-            <p>Visual design begins. Design directions are explored in close communication with the client.
+            <p>Visual design begins. Design directions are explored in close communication with you, the client.
             </p>
 
             <!--<p>Sometimes software is developed to support an existing process and sometimes it offers something
@@ -83,21 +94,21 @@
         </div>
 
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 0.5, "vis": 0.8, "ux": 1, "sys": 1, "pm": 0.7 }'>
             <div class="col span_1_of_3"><h3>Planning</h3></div>
              <div class="col span_2_of_3">
               <p>We analyze the project into component parts before any coding begins. We quantify and estimate roles and document workflows.
                 We create a spreadsheet listing each significant part with an estimated time frame.
-                 This mapping allows us to estimate resource requirements in detail. It also allows the client to understand
+                 This mapping allows us to estimate resource requirements in detail. It also allows you to understand
                the work as it progresses.</p>
-             <p>There is a wide assortment of platforms, libraries, frameworks, licenses, programming languages, etc.
-                Java, Ruby, Django, Apache ... &ldquo;The Cloud&rdquo; If you are familiar with the jargon, we will
-                openly discuss details in a technical way. If you are not, we will walk through the pros and cons of all
-                approaches especially in terms of cost of maintenance.</p>
              <p>Your data ecosystem is complex. Often legacy systems must be closely intermingled with new functionality. We
                 develop content strategies and processes that help you identify, prioritize, produce and control the
                 flow of content to meet the needs of all personas. We customize and configure sophisticated content
                 management systems capable of managing &lsquo;big data&rsquo; scale content and media.</p>
+             <p>There are a wide assortment of platforms, libraries, frameworks, licenses, programming languages, etc.
+                Java, Ruby, Django, Apache ... &ldquo;The Cloud.&rdquo; If you are familiar with the jargon, we will
+                openly discuss details in a technical way. If you are not, we will walk through the pros and cons of all
+                approaches especially in terms of cost of maintenance.</p>
              <!--</div>-->
              </div>
         </div>
@@ -139,14 +150,14 @@
         </div>-->
 
         <div class="col span_2_of_5"></div>
-      <div class="col span_3_of_5">
+      <div class="col span_3_of_5 phase" data-roles='{ "you": 0.5, "vis": 0.5, "ux": 1, "sys": 1, "pm": 0.5 }'>
             <div class="col span_1_of_3"><h3>Documentation</h3></div>
              <div class="col span_2_of_3">
             <p>We produce a comprehensive overview of the application. This is our roadmap.
               <!--in collaboration with the client.-->
-              This includes wireframes and process flows for identified roles.
+              It includes wireframes and process flows for all identified roles.
 
-              We work iteratively, refining based on feedback from the client, developing toward final approval of
+              We work iteratively, refining based on feedback from you, developing toward final approval of
               the project specifications.
             </p>
             <p>Using the discovery and planning documents, we implement initial wireframes. These wireframes can be
@@ -177,10 +188,10 @@
         </div>
 -->
       <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 0.2, "vis": 0.2, "ux": 1, "sys": 1, "pm": 0.2 }'>
             <div class="col span_1_of_3"><h3>Application Development</h3></div>
              <div class="col span_2_of_3">
-            <p>We build your dream. Our UX, design and development teams build highly functional and custom applications to fit your needs.
+            <p>We build your dream. Our UX, design and development teams create highly functional and custom applications to fit your needs.
               We have established a visual design vocabulary. We have finalized documentation. Coding begins.
             <!--  As more daily work moves online, the need for increasingly complex web applications &ndash; either as a
                 complement to existing products or software as service &ndash; becomes essential. We believe they
@@ -194,7 +205,7 @@
              </div>
         </div>
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 1, "vis": 0.5, "ux": 0.7, "sys": 0.7, "pm": 1 }'>
             <div class="col span_1_of_3"><h3>Evaluation </h3></div>
              <div class="col span_2_of_3">
             <p>Here we are. The application is in beta. Does it meet our expectations? Where do we go from here? These
@@ -208,7 +219,7 @@
 
         </div>
         <div class="col span_2_of_5"></div>
-        <div class="col span_3_of_5">
+        <div class="col span_3_of_5 phase" data-roles='{ "you": 1, "vis": 0.1, "ux": 0.1, "sys": 0.1, "pm": 1 }'>
             <div class="col span_1_of_3"><h3>Maintenance</h3></div>
              <div class="col span_2_of_3">
             <p>Your application is alive and functioning in its ecosystem.

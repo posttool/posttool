@@ -44,6 +44,30 @@ function update() {
     }
     $el.css({opacity: Math.max(.1, o)});
   });
+
+  $('.phase').each(function (index, element) {
+    var $el = $(element);
+    var p = $el.position();
+    var h = $el.height();
+    var y = p.top - st;
+
+    var mydata = $el.data('roles');
+
+    if (y + h > 300) {
+      if($('#roles').data('active') == index){
+        //console.log("ALREADYSELECTED ")
+      } else {
+        $('#roles').data('active', index)
+        for(var prop in mydata){
+          move('#'+ prop)
+            .set('opacity', mydata[prop],500)
+            .end()
+        }
+      }
+      return false;
+    }
+  });
+
   // logo
   var logod = (st < 40 ? 0 : (st - 40) * .3);
   var logol = 60 - logod;
