@@ -14,7 +14,9 @@ if (useCluster && cluster.isMaster) {
 
 } else {
   var express = require('express');
-  var bodyParser = require('body-parser')
+  var bodyParser = require('body-parser');
+  var current = require('../currentcms');
+  var cms = new current.Cms(require('./cms'));
   var app = express();
   app.use(bodyParser.urlencoded({ extended: false }))
   app.set('views', __dirname + '/views');
@@ -55,6 +57,20 @@ if (useCluster && cluster.isMaster) {
       if (err) return next(err);
       res.json({msg:'ok', data: req.body});
     });
+  });
+
+  app.get('/clients/', function (req, res, next) {
+    var client_id = '544974b3cbcc2a000036aedb';
+    cms.meta.model('Project').find({clients: {$in: [client_id]}}).populate('presentations').exec(function (err, projects) {
+      res.render('clients.ejs', {projects: projects});
+    })
+  });
+
+  app.get('/client/p/:id', function (req, res, next) {
+    // todo check to see that you are in the container project
+    cms.meta.model('Presentation').findOne({_id: req.params.id}).populate('slides comments').exec(function (err, presentation) {
+      res.render('presentation.ejs', {presentation: presentation});
+    })
   });
 
 

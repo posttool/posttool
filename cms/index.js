@@ -7,7 +7,7 @@ exports = module.exports = {
   permissions: require('./permission')
 };
 
-if (process.argv.length > 2 && process.argv[2] == 'admin') {
+if (process.argv.length > 2) {
   var utils = require('../../currentcms/lib/utils');
   switch (process.argv[2]) {
     case 'admin':

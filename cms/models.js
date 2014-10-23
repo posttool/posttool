@@ -3,32 +3,6 @@ var CmsModels = require('../../currentcms/lib/models');
 
 exports = module.exports = {
 
-  Organization: {
-    meta: {
-      plural: "Organizations",
-      name: "<%= name %>",
-      dashboard: true
-    },
-    schema: {
-      name: String,
-      description: String,
-      projects: [{type: ObjectId, ref: 'Project'}],
-      clients: [{type: ObjectId, ref: 'Client'}]
-    },
-    browse: [
-      {name: "name", cell: "char", filters: ["$regex", "="], order: "asc,desc,default"},
-      {name: "created", cell: "date", filters: ["$gt", "$lt", "$gte", "$lte"], order: "asc,desc"},
-      {name: "modified", cell: "date", filters: ["$gt", "$lt", "$gte", "$lte"], order: "asc,desc"}
-    ],
-    form: [
-      {name: "name", widget: "input"},
-      {name: "description", widget: "rich_text", options: {collapsable: true}},
-      {name: "projects", widget: "choose_create", options: {type: "Project", array: true}},
-      {name: "clients", widget: "choose_create", options: {type: "Client", array: true}},
-      {name: "indexed", widget: "date"}
-    ]
-  },
-
   Project: {
     meta: {
       plural: "Projects",
@@ -38,16 +12,18 @@ exports = module.exports = {
     schema: {
       name: String,
       description: String,
+      clients: [{type: ObjectId, ref: 'Client'}],
       presentations: [{type: ObjectId, ref: 'Presentation'}]
     },
     browse: [
       {name: "name", cell: "char", filters: ["$regex", "="], order: "asc,desc,default"},
-      {name: "created", cell: "date", filters: ["$gt", "$lt", "$gte", "$lte"], order: "asc,desc"},
-      {name: "modified", cell: "date", filters: ["$gt", "$lt", "$gte", "$lte"], order: "asc,desc"}
+      {name: "created", cell: "char", filters: ["$gt", "$lt", "$gte", "$lte"], order: "asc,desc"},
+      {name: "modified", cell: "char", filters: ["$gt", "$lt", "$gte", "$lte"], order: "asc,desc"}
     ],
     form: [
       {name: "name", widget: "input"},
       {name: "description", widget: "rich_text"},
+      {name: "clients", widget: "choose_create", options: {type: "Client", array: true}},
       {name: "presentations", widget: "choose_create", options: {type: "Presentation", array: true}}
     ]
   },
@@ -61,17 +37,23 @@ exports = module.exports = {
     schema: {
       name: String,
       description: String,
+      approved: Boolean,
+      completionDate: Date,
       slides: [{type: ObjectId, ref: 'Slide'}],
       comments: [{type: ObjectId, ref: 'Comment'}]
     },
     browse: [
       {name: "name", cell: "char", filters: ["$regex", "="], order: "asc,desc,default"},
+      {name: "approved", cell: "bool", filters: ["$regex", "="], order: "asc,desc,default"},
+      {name: "completionDate", cell: "date", filters: ["$regex", "="], order: "asc,desc,default"},
       {name: "created", cell: "date", filters: ["$gt", "$lt", "$gte", "$lte"], order: "asc,desc"},
       {name: "modified", cell: "date", filters: ["$gt", "$lt", "$gte", "$lte"], order: "asc,desc"}
     ],
     form: [
       {name: "name", widget: "input"},
       {name: "description", widget: "rich_text"},
+      {name: "approved", widget: "boolean"},
+      {name: "completionDate", widget: "date"},
       {name: "slides", widget: "choose_create", options: {type: "Slide", array: true}},
       {name: "comments", widget: "choose_create", options: {type: "Comment", array: true}}
     ]
@@ -80,12 +62,13 @@ exports = module.exports = {
   Slide: {
     meta: {
       plural: "Slides",
-      title: "<%= title %>",
+      name: "<%= title %>",
       dashboard: true
     },
     schema: {
       title: String,
       description: String,
+      resources: [{type: ObjectId, ref: 'Resource'}]
     },
     browse: [
       {name: "title", cell: "char", filters: ["$regex", "="], order: "asc,desc,default"},
@@ -96,7 +79,7 @@ exports = module.exports = {
     form: [
       {name: "title", widget: "input"},
       {name: "description", widget: "rich_text"},
-      {name: "resources", label: "images", widget: "upload", options: {type: "Resource", array: true}}
+      {name: "resources", widget: "upload", options: {type: "Resource", array: true}}
     ]
   },
 
@@ -123,7 +106,7 @@ exports = module.exports = {
   Client: {
     meta: {
       plural: "Clients",
-      name: "<%= first %> <%= last %>",
+      name: "<% try{ %><%= first %><% }catch(e){} %> <% try{ %><%= last %><% }catch(e){} %>",
       dashboard: true
     },
     schema: {

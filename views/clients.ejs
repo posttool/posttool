@@ -1,0 +1,24 @@
+<% include head %>
+<% include nav %>
+<div id="root">
+    <div class="section group">
+        <div class="col span_5_of_5 bighead bighead-barleft bigpadright">
+            Hello.
+        </div>
+
+    </div>
+    <div class="section group">
+        <div class="case-info col span_5_of_5 padboth">
+            <% for (var i=0; i<projects.length; i++){%>
+            <h3><%=projects[i].name%></h3>
+            <ul>
+            <% for (var j=0; j<projects[i].presentations.length; j++){ var p = projects[i].presentations[j]; %>
+                <li><a href='/client/p/<%=p._id%>'><%=p.name%></a></li>
+            <%}%>
+            </ul>
+            <%}%>
+        </div>
+    </div>
+    <% include footer %>
+</div>
+<% include foot %>
